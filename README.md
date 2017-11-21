@@ -1,12 +1,12 @@
 # static-data
 
-A library for saving data to json, and then fetching that data from your application
+A library for saving data to json, and then fetching that data in your application
 
 #### installation
 
 `npm i --save static-data`
 
-#### usage
+#### usage `set`
 ```javascript
 const sd = require('static-data');
 const fetch = require('node-fetch');
@@ -38,4 +38,20 @@ after running the above code, the two following files will be created:
 [./public/yipee.json](https://github.com/jeffreyyoung/static-data/blob/master/examples/simple/public/yipee.json)
 [./public/gitHubUsers.json](https://github.com/jeffreyyoung/static-data/blob/master/examples/simple/public/gitHubUsers.json)
 
+#### usage `load`
 
+```javascript
+const sd = require('static-data');
+
+const prefix = 'http://localhost:3000/public/' //url where .json files are stored
+ 
+const githubUsers = await sd.load(prefix,'gitHubUsers')
+```
+
+#### usage `loader`
+
+```javascript
+const loader = require('static-data').loader('http://localhost:3000/public/');
+ 
+const githubUsers = await loader.load('gitHubUsers')
+```
