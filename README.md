@@ -9,7 +9,7 @@ A library for saving data to json, and then fetching that data from your applica
 #### usage
 create a node file like so:
 ```javascript
-const sd = require('static-data-loader');
+const sd = require('static-data');
 const fetch = require('node-fetch');
 
 const destination = './public/';
