@@ -37,7 +37,11 @@ sd.set(filesToSet, destination);
 after running the above code, the two following files will be created:
 [./public/yipee.json](https://github.com/jeffreyyoung/static-data/blob/master/examples/simple/public/yipee.json)
 [./public/gitHubUsers.json](https://github.com/jeffreyyoung/static-data/blob/master/examples/simple/public/gitHubUsers.json)
-
+#### usage `fetch`
+```javascript
+const res = await fetch('http://localhost:3000/public/gitHubUsers.json')
+const json = await res.json();
+```
 #### usage `load`
 
 ```javascript
