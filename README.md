@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/jeffreyyoung/static-data.svg?branch=master)](https://travis-ci.org/jeffreyyoung/static-data)
 # static-data
 
 A library for saving data to json, and then fetching that data in your application
