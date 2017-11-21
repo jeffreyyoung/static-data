@@ -7,9 +7,8 @@ A library for saving data to json, and then fetching that data from your applica
 `npm i --save static-data`
 
 #### usage
-create a node file like so:
 ```javascript
-const sd = require('static-data-loader');
+const sd = require('static-data');
 const fetch = require('node-fetch');
 
 const destination = './public/';
@@ -35,6 +34,8 @@ const filesToSet = [
 sd.set(filesToSet, destination);
 ```
 
-after running the above file, the two following files will be created:
-`./public/yipee.json`
-`./public/gitHubUsers.json`
+after running the above code, the two following files will be created:
+[./public/yipee.json](https://github.com/jeffreyyoung/static-data/blob/master/examples/simple/public/yipee.json)
+[./public/gitHubUsers.json](https://github.com/jeffreyyoung/static-data/blob/master/examples/simple/public/gitHubUsers.json)
+
+
