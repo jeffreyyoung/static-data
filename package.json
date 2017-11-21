@@ -1,6 +1,6 @@
 {
   "name": "static-data",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "A module creating saving static json files and then loading them from your application",
   "main": "dist/index.js",
   "repository": {
