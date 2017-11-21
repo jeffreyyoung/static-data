@@ -1,8 +1,12 @@
 {
-  "name": "static-data-loader",
+  "name": "static-data",
   "version": "1.0.10",
   "description": "A module creating saving static json files and then loading them from your application",
   "main": "dist/index.js",
+	"repository":{ 
+		"type" : "git", 
+		"url" : "https://github.com/jeffreyyoung/static-data"
+  },	
   "scripts": {
     "build": "babel src --presets babel-preset-es2017 --out-dir dist",
     "prepublish": "npm run build",
