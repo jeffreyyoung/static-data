@@ -1,0 +1,17 @@
+{
+  "name": "static-data-loader",
+  "version": "1.0.10",
+  "description": "A module creating saving static json files and then loading them from your application",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --presets babel-preset-es2017 --out-dir dist",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2017": "^6.24.1"
+  }
+}
