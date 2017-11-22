@@ -12,12 +12,12 @@ async function extractData(arg) {
 /**
 	example destination: './data'
 	
-	example loadDataToCache:
+	example getData:
 	
 	async function() {
 		return [
 			{
-				key: 'key1',
+				path: 'key1',
 				getData: async () => {
 					return {hello: world}
 				}
@@ -25,17 +25,23 @@ async function extractData(arg) {
 		]
 	}
 */
-async function set(loadDataToCache, destination) {
+const defaultOptions = {
+	pathPrefix: '',
+	pathSuffix: ''
+}
+
+async function set(getData, optionsIn) {
+	const opts = {...defaultOptions, ...optionsIn};
 	try {
-		const dataToCache = await extractData(loadDataToCache);
+		
+		const filesToCache = await extractData(getData);
 		
 		await Promise.all(
-			dataToCache.map( async ({key, getData}) => {
-				const data = await getData();
+			filesToCache.map( async ({path, getData}) => {
+				const data = await extractData(getData);
 				const stringifiedFileContents = JSON.stringify(data);
 				
-				const filePath = `${destination}/${key}.json`;
-				console.log('Writing data to ', filePath);
+				const filePath = opts.pathPrefix+path+opts.pathSuffix;
 				await writeFile(filePath, stringifiedFileContents);
 			})
 		);
@@ -47,6 +53,7 @@ async function set(loadDataToCache, destination) {
 }
 
 async function writeFile(filePath, stringifiedFile) {
+	console.log('Writing file: ', filePath);
 	await ensureDirectoryExistence(filePath);
 	return new Promise( (resolve, reject) => {
 		fs.writeFile(filePath, stringifiedFile, err => {
