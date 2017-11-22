@@ -73,17 +73,11 @@ sd.set(getFiles, {
 After running the above code the following files will be created:
 `./public/users.json`, `./public/users/1.json`, `./public/users/2.json`, ...etc
 
-#### usage `fetch`
+Later on in your application you can request your data `fetch`
 ```javascript
-const res = await fetch('http://localhost:3000/public/gitHubUsers.json')
-const json = await res.json();
-```
+const res = await fetch('http://localhost:3000/public/users.json')
+const users = await res.json();
 
-#### usage `loader`
-
-```javascript
-const loader = require('static-data').loader('http://localhost:3000/public/');
- 
-const githubUsers = await loader.load('gitHubUsers')
-const yipee = await loader.load('yipee');
+const user1Res = await fetch('http://localhost:3000/public/users/1.json')
+const user1 = await user1Res.json();
 ```
