@@ -39,7 +39,6 @@ async function set(getFiles, optionsIn) {
 		await Promise.all(
 			filesToCache.map( async ({path, getJson}) => {
 				const data = await extractData(getJson);
-				console.log('GOT THE DATA');
 				const stringifiedFileContents = JSON.stringify(data);
 				
 				const filePath = opts.pathPrefix+path+opts.pathSuffix;
@@ -54,7 +53,7 @@ async function set(getFiles, optionsIn) {
 }
 
 async function writeFile(filePath, stringifiedFile) {
-	console.log('Writing file: ', filePath, stringifiedData);
+	console.log('Writing file: ', filePath);
 	await ensureDirectoryExistence(filePath);
 	return new Promise( (resolve, reject) => {
 		fs.writeFile(filePath, stringifiedFile, err => {
