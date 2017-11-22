@@ -4,14 +4,14 @@ const fetch = require('node-fetch');
 const filesToSet = [
   {
     path: './public/yipee.json',
-    getData: async () => {
+    getJson: async () => {
       return {
         food: 'yummy'
       }
     }
   }, {
     path: './public/gitHubUsers.json',
-    getData: async () => {
+    getJson: async () => {
       const res = await fetch('https://api.github.com/users')
       const json = await res.json();
       return json;

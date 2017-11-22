@@ -8,7 +8,7 @@ const getFiles = async () => {
 	const individualUsersJson = await Promise.all(
 		gitHubUsersJson.map(user => ({
 			path: `/users/${user.id}`,
-			getData: async() => {
+			getJson: async() => {
 				const request = await fetch(`https://api.github.com/users/${user.id}`);
 				return await request.json();
 			}
@@ -18,7 +18,7 @@ const getFiles = async () => {
 	return [
 		{
 			path: '/users',
-			getData: gitHubUsersJson
+			getJson: gitHubUsersJson
 		},
 		...individualUsersJson
 	]

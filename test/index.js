@@ -6,7 +6,7 @@ const destination = './public/';
 const filesToSet = [
 	{
     path: 'yaayyy',
-    getData: async () => {
+    getJson: async () => {
       const res = await fetch('https://api.github.com/users')
       const json = await res.json();
       return json;
