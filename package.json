@@ -1,11 +1,11 @@
 {
-  "name": "static-data",
-  "version": "2.0.12",
-  "description": "A module creating saving static json files and then loading them from your application",
+  "name": "write-json-files",
+  "version": "1.0.1",
+  "description": "A module creating saving data from many sources to json files",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeffreyyoung/static-data"
+    "url": "https://github.com/jeffreyyoung/write-json-files"
   },
   "scripts": {
     "build": "babel src -d dist",

@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "node-fetch": "^1.7.3",
-    "static-data": "^2.0.11"
+    "write-json-files": "^2.0.11"
   }
 }

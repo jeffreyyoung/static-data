@@ -1,4 +1,4 @@
-const sd = require('static-data');
+const sd = require('write-json-files');
 const fetch = require('node-fetch');
 
 const getFiles = async () => {

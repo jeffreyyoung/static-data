@@ -1,15 +1,15 @@
-[![Build Status](https://travis-ci.org/jeffreyyoung/static-data.svg?branch=master)](https://travis-ci.org/jeffreyyoung/static-data)
-# static-data
+[![Build Status](https://travis-ci.org/jeffreyyoung/write-json-files.svg?branch=master)](https://travis-ci.org/jeffreyyoung/write-json-files)
+# write-json-files
 
 A library for saving data to json, and then fetching that data in your application
 
 #### installation
 
-`npm i --save static-data`
+`npm i --save write-json-files`
 
 #### simple usage `set`
 ```javascript
-const sd = require('static-data');
+const sd = require('write-json-files');
 const fetch = require('node-fetch');
 
 const filesToSet = [
@@ -34,12 +34,12 @@ sd.set(filesToSet);
 ```
 
 after running the above code, the two following files will be created:
-[./public/yipee.json](https://github.com/jeffreyyoung/static-data/blob/master/examples/simple/public/yipee.json)
-[./public/gitHubUsers.json](https://github.com/jeffreyyoung/static-data/blob/master/examples/simple/public/gitHubUsers.json)
+[./public/yipee.json](https://github.com/jeffreyyoung/write-json-files/blob/master/examples/simple/public/yipee.json)
+[./public/gitHubUsers.json](https://github.com/jeffreyyoung/write-json-files/blob/master/examples/simple/public/gitHubUsers.json)
 
 #### less simple usage `set`
 ```javascript
-const sd = require('static-data');
+const sd = require('write-json-files');
 const fetch = require('node-fetch');
 
 const getFiles = async () => {
