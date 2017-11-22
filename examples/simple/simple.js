@@ -1,18 +1,16 @@
 const sd = require('static-data');
 const fetch = require('node-fetch');
 
-const destination = './public/';
-
 const filesToSet = [
   {
-    key: 'yipee',
+    path: './public/yipee.json',
     getData: async () => {
       return {
         food: 'yummy'
       }
     }
   }, {
-    key: 'gitHubUsers',
+    path: './public/gitHubUsers.json',
     getData: async () => {
       const res = await fetch('https://api.github.com/users')
       const json = await res.json();
@@ -21,4 +19,4 @@ const filesToSet = [
   }
 ]
 
-sd.set(filesToSet, destination);
+sd.set(filesToSet);
