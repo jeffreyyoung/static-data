@@ -42,26 +42,27 @@ after running the above code, the two following files will be created:
 const sd = require('write-json-files');
 const fetch = require('node-fetch');
 
+const getUsers = async () => {
+  const res = await fetch('https://api.github.com/users');
+  return await res.json();
+}
+
+const getUser = async (userId) => {
+  const res = await fetch(`https://api.github.com/users/${user.id}`);
+  return await res.json();
+}
+
 const getFiles = async () => {
-  const res = await fetch('https://api.github.com/users')
-  const gitHubUsersJson = await res.json();
-
-  const individualUsersJson = await Promise.all(
-    gitHubUsersJson.map(user => ({
-      path: `/users/${user.id}`,
-      getJson: async() => {
-        const request = await        fetch(`https://api.github.com/users/${user.id}`);
-        return await request.json();
-      }
-    }))
-  )
-
+  const gitHubUsers = await getUsers();
   return [
     {
       path: '/users',
-      getJson: gitHubUsersJson
+      getJson: gitHubUsers
     },
-    ...individualUsersJson
+    ...gitHubUsers.map(({id}) => ({
+      path: `/users/${id}`,
+      getJson: () => getUser(id)
+    }))
   ]
 }
 
